@@ -30,9 +30,10 @@ class Login extends React.Component<Props> {
 
     render() {
         return (
+            
             <div className="login">
                 <img className="img" src={baa}  alt="sall" />
-              
+                <div className="background"> </div>
                 <div className={`login__welcome-back ${this.state.login ? 'login__welcome-back--active' : 'login__welcome-back--inactive'}`}>
                     
                     <div className="login__welcome-back__logo-container" style={{marginBottom:"30px"}} >
