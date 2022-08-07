@@ -5,10 +5,17 @@ import facebook from '../../assets/images/facebook.svg';
 import google from '../../assets/images/google.svg';
 import linkedin from '../../assets/images/linkedin.svg';
 import baa from '../../assets/images/baa.jpg';
+import {code} from '../../main.js'
+import {dcode} from '../../main.js'
+import { login } from '../../main.js';
 import { connect } from 'react-redux';
-import { setUserAction } from '../../shared/store/actions/user.actions';
 import { Dispatch } from 'redux';
+import { setUserAction } from '../../shared/store/actions/user.actions';
 import { RouteComponentProps } from 'react-router-dom';
+import { mintNft } from '../../lit.js';
+import { provisionAccess } from '../../lit.js';
+
+
 
 interface Props extends RouteComponentProps {
     setUserType(username: string): void
@@ -16,6 +23,9 @@ interface Props extends RouteComponentProps {
 
 class Login extends React.Component<Props> {
     state = {
+        decrypt: "Decrypted Code",
+        text: "Code",
+        code: "",
         login: true,
         signUpForm: {
             name: "",
@@ -28,10 +38,33 @@ class Login extends React.Component<Props> {
         }
     };
 
-    render() {
+     decryptdata = (drcy:any) => {
+        const data = mintNft();
+        const address = data;  
+     }
+
+     access = (acs:any) => {
+        acs = provisionAccess();
+        const key = acs;
+    
+     }
+
+     show = (dcode:string, code:string) => {
+        login();
+        this.changeText(dcode,code);}
+
+    changeText = (decrypt:string, text:string) => {
+  
+        this.setState({ text }); 
+        this.setState({ decrypt });
+      } 
+
+    render() {const { text, decrypt} = this.state
         return (
             
             <div className="login">
+                
+
                 <img className="img" src={baa}  alt="sall" />
                 <div className="background"> </div>
                 <div className={`login__welcome-back ${this.state.login ? 'login__welcome-back--active' : 'login__welcome-back--inactive'}`}>
@@ -47,6 +80,9 @@ class Login extends React.Component<Props> {
                     <div className="login__welcome-back__logo-container"></div>
                   
                     </div>
+                        
+                       
+
                     <div className="login__welcome-back__main-container">
                         <div className="login__welcome-back__main-container__text-container">
                             <span className="login__welcome-back__main-container__text-container--title" >
@@ -76,40 +112,39 @@ class Login extends React.Component<Props> {
                             e.preventDefault();
                             
                         }}> 
+                                
+                            <button 
+                                className="login__create-container__form-container__form--submit"  onClick={ () => {this.show("Decrypted Code",code)}}> Show Code</button> 
 
-                                                      <button
-                                className="login__create-container__form-container__form--submit">
-                                Show Code
-                            </button>
                             <div className="login__welcome-back__logo-container"></div>
-                            <input
+                            <label
+                                style={{color:'#000'}}
                                 className="login__create-container__form-container__form--name"
-                                type="code"
-                                placeholder="CODE"
-                                value={this.state.signUpForm.password}
-                                required />
-                           
+                                placeholder= "Decrypted Code"
 
+                                >{text}</label>
+                     
                             
                             <button
-                                className="login__create-container__form-container__form--submit">
+                                className="login__create-container__form-container__form--submit"  onClick={ () => { this.changeText(dcode,code)} }  >
                                 Decrypt
                             </button>
+                                                 
                             <div className="login__welcome-back__logo-container"></div>
-                            <input
+                            <label
+                                style={{color:'#000'}}
                                 className="login__create-container__form-container__form--password"
-                                type="Decrypted code"
-                                placeholder="Decrypted CODE"
-                                value={this.state.signUpForm.password}
-                                required />
+                                placeholder= "Decrypted Code"
+
+                                >{decrypt}</label>
                            
                         </form>
                     </div>
                 </div>
+                
                 <div className={`login__login-container ${!this.state.login ? 'login__login-container--active' : 'login__login-container--inactive'}`}>
                     
                     <div className="login__login-container__main-container">
-                        
                         
                         <div className="login__login-container__main-container__form-container">
                             <form className="login__login-container__main-container__form-container__form" onSubmit={(e) => {
@@ -140,11 +175,16 @@ class Login extends React.Component<Props> {
                     </div>
                 </div>
                 
+
                     <button className='textjos__prop' >
-                              contact us...
+                             contact us...
                             
                     </button>
-                                    
+                
+                    
+                       
+                    
+                    
                     <div className="textjos__socials">
                             <img className="textjos__socials--facebook-icon" src={facebook} alt="" />
                             <img className="textjos__socials--google-icon" src={google} alt="" />
@@ -160,6 +200,10 @@ class Login extends React.Component<Props> {
    
 }
 
+
+
+
+
 function mapDispatchToProps(dispatch: Dispatch) {
     return {
         setUserType: (username: string) =>
@@ -170,3 +214,6 @@ function mapDispatchToProps(dispatch: Dispatch) {
 }
 
 export default connect(null, mapDispatchToProps)(Login);
+
+
+ 

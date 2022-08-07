@@ -39,6 +39,7 @@ $breakpoint-mobile: 768px;
         font-size: 20px;
         left:650px;
         border-radius: 40px;
+        cursor: pointer;
         
     }
 
@@ -70,6 +71,27 @@ $breakpoint-mobile: 768px;
                 cursor: pointer;
             }
         
+        
+    }
+}
+
+
+.textsus {
+    position: relative;
+    background-color: #420606; 
+    width: 600px; 
+    height: 800px;
+    
+
+    &__prop {
+        position: absolute; 
+        top: 10px;
+        background-color: #420606;
+        color: white;
+        font-size: 17px;
+        left:650px;
+        border-radius: 40px;
+        cursor: pointer;
         
     }
 }
@@ -240,7 +262,7 @@ $breakpoint-mobile: 768px;
 
         &--info-text {
             margin-top: 15px;
-            color: #AEAEAE;
+            color: #000000;
             font-size: 14px;
         }
 
@@ -253,25 +275,28 @@ $breakpoint-mobile: 768px;
 
                 input {
                     width: 290px;
-                    height: 34px;
+                    height: 40px;
                     border-radius: 3px;
-                    background-color: #f1f1f1;
+                    background-color: #ffffff;
                     margin-bottom: 10px;
-                    color: #242424;
+                    color: #000000;
 
                     @media (max-width: $breakpoint-mobile) {
-                        width: 50vw;
+                        width: 70vw;
                     }
                 }
 
                 &--name {
                     background-image: url(../../assets/images/user.svg);
                     background-repeat: no-repeat;
-                    background-position: 80px center;
-                    padding-left: 120px;
+                    background-position: 20px center;
+                    padding-left: 70px;
                     font-size: 20px;
                     border: solid 1px #420606;
                     background-size: 23px;
+                    color: #000000;
+                    background-color: #ffffff;
+                
                 }
 
                 &--email {
@@ -281,16 +306,21 @@ $breakpoint-mobile: 768px;
                     padding-left: 40px;
                     font-size: 15px;
                     background-size: 23px;
+                    background-color: #ffffff;
                 }
 
                 &--password {
                     background-image: url(../../assets/images/password.svg);
                     background-repeat: no-repeat;
-                    background-position: 30px center;
+                    background-position: 20px center;
                     padding-left: 70px;
                     font-size: 20px;
                     border: solid 1px #420606;
                     background-size: 23px;
+                    background-color: #ffffff;
+                    color: #000000;
+                    
+                    
                 }
 
                 &--submit {
@@ -376,7 +406,7 @@ $breakpoint-mobile: 768px;
     
             &--info-text {
                 margin-top: 15px;
-                color: #AEAEAE;
+                color: #000000;
                 font-size: 14px;
             }
 
@@ -391,7 +421,7 @@ $breakpoint-mobile: 768px;
                         width: 290px;
                         height: 34px;
                         border-radius: 3px;
-                        background-color: #f1f1f1;
+                        background-color: #000000;
                         margin-bottom: 10px;
                         color: #242424;
                     }
@@ -403,6 +433,7 @@ $breakpoint-mobile: 768px;
                         padding-left: 40px;
                         font-size: 15px;
                         background-size: 23px;
+                        
                     }
     
                     &--email {
@@ -412,6 +443,7 @@ $breakpoint-mobile: 768px;
                         padding-left: 40px;
                         font-size: 15px;
                         background-size: 23px;
+                        color: #000000;
                     }
     
                     &--password {
@@ -421,6 +453,8 @@ $breakpoint-mobile: 768px;
                         padding-left: 40px;
                         font-size: 15px;
                         background-size: 23px;
+                        color: #000000;
+                        
                     }
     
                     &--submit {
@@ -494,3 +528,6 @@ $breakpoint-mobile: 768px;
         }
     }
 }
+
+
+
