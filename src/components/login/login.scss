@@ -103,7 +103,7 @@ $breakpoint-mobile: 768px;
     color: #420606;
     font-size: 20px;
     left:650px;
-    -webkit-text-stroke: 1px #000000;
+    -webkit-text-stroke: 1px #420606;
     
 }
 
@@ -293,6 +293,9 @@ $breakpoint-mobile: 768px;
                     padding-left: 70px;
                     font-size: 20px;
                     border: solid 1px #420606;
+                    border-radius: 9px ;
+                    height: 30px ;
+                    width: 270px ;
                     background-size: 23px;
                     color: #000000;
                     background-color: #ffffff;
@@ -307,6 +310,9 @@ $breakpoint-mobile: 768px;
                     font-size: 15px;
                     background-size: 23px;
                     background-color: #ffffff;
+                    border-radius: 9px ;
+                    height: 30px ;
+                    width: 270px ;
                 }
 
                 &--password {
@@ -319,6 +325,9 @@ $breakpoint-mobile: 768px;
                     background-size: 23px;
                     background-color: #ffffff;
                     color: #000000;
+                    border-radius: 9px ;
+                    height: 30px ;
+                    width: 270px ;
                     
                     
                 }
